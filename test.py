@@ -12,7 +12,7 @@ import shutil
 import cv2
 import sys
 
-if sys.version_info >(2,):
+if sys.version_info >=(3,):
     xrange = range
 
 parser = argparse.ArgumentParser()
