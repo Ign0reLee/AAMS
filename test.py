@@ -10,6 +10,10 @@ import os
 import errno
 import shutil
 import cv2
+import sys
+
+if sys.version_info >(2,):
+    xrange = range
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--model", dest='model', type=str)
@@ -114,8 +118,7 @@ def empty_dir(path):
             elif os.path.isdir(file_path):
                 shutil.rmtree(file_path)
         except Exception as e:
-            print 'Warning: {}'.format(e)
-
+            print ('Warning: {}'.format(e))
 
 def create_dir(path):
     try:
